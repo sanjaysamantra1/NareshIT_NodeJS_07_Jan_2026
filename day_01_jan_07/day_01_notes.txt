@@ -1,0 +1,35 @@
+Tools/Softwares to install
+============================
+1. NodeJS
+   https://nodejs.org/en/download
+
+Note : Verify nodejs is installed? 
+open command Prompt and type 'node -v'
+
+2. vscode 
+   https://code.visualstudio.com/download
+
+
+
+
+How To Write and Execute Javascript Code 
+========================================
+-Javascript code can be executed either in 
+    1. Browser ( FrontEnd development )
+    2. Nodejs  ( BackEnd Development )
+
+Note: Every Javascript that runs on browser will not run in nodejs and vice-versa
+
+Execute javascript Code in Browser
+===================================
+1. create a javascript file with some javascript code
+2. link that javascript file with an HTML file
+3. when we open HTML file in browser, javascript code gets executed in browser
+
+
+Execute javascript Code in Browser
+===================================
+1. create a javascript file with some javascript code
+2. Run that javascript file using nodejs
+   node <filename>.js
+   node addition.js
