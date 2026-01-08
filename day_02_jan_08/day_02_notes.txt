@@ -1,0 +1,87 @@
+How To Write and Execute Javascript Code 
+========================================
+-Javascript code can be executed either in 
+    1. Browser ( FrontEnd development )
+    2. Nodejs  ( BackEnd Development )
+
+Note: Every Javascript that runs on browser will not run in nodejs 
+      Every javascrip that runs on nodejs will not work in browser
+
+
+
+Objects Available both in browser & nodejs : console , Math , Array , String, Obejcts, Map, settings
+Objects Available only in browser, not in nodejs : window , document
+Objects Available only in nodejs, not in browser : os, fs , http , url
+
+
+
+            Browser                         Nodejs
+============================================================  
+1. DOM(document) - yes                   1. DOM(document) - Nodejs
+2. window - yes                          2. window - no
+3. cookie - yes                          3. cookie - no
+4. offline storage - yes                 4. offline storage - no
+5. FileSystem - No                       5. FileSystem - yes
+6. Database Connection - No              6. Database Connection - yes
+7. Client App / FrontEnd / UI            7. Server App / BackEnd
+8. Consume APIs                          8. Develop APIs
+
+
+Javascript Engine
+==================
+-It Executes Javascript Code
+-Javascript Engine is Available in every browser + Nodejs
+
+Different Javascript Engines:
+Chrome : v8 
+Firefox : SpiderMonkey
+IE  : Chakra
+safari : JavascriptCore
+Nodejs : v8
+
+
+
+Javascript : Programming Language, it follows ECMAScript Standards
+ECMAScript : set of standards
+ECMA : European Computer Manufecturers Association
+
+
+<2015    ES_5
+2015     ES_6  ( const, let , arrow , module, promise, spread, REST .......)
+2016     ES_7  ( ** )
+2017     ES_8  
+2018     ES_9  
+2019     ES_10  
+2020     ES_11  
+2021     ES_12  
+2022     ES_13  
+2023     ES_14  
+2024     ES_15  
+2025     ES_16  (latest)
+
+
+Why Nodejs is called an environement:
+=====================================
+-nodejs provides everything to execute javascript code outside the browser.
+-JS engine , APIs, Event loop 
+
+
+
+-Typescript is superset of Javascript
+-Typescript  = Javascript + Extra features (type checking , interface , generics)
+
+
+        Javascript                     Typescript
+=========================================================
+1. Runs on nodejs - Yes                 1. Runs on nodejs - No (needs to be converted to JS)
+2. compilation Needed - No              2. Compilation Needed - Yes
+3. Type Checking - No                   3. Type Checking - Yes
+4. Runtime Safe - No                    4. Runtime Safe - Yes
+5. interface - No                       5. Interface - Yes
+
+
+How to run a typescript file in nodejs
+=====================================
+1. create a typescript file (abc.ts)
+2. compile that Typescript file to generate equivalent javascript code  
+    npx tsc abc.ts
