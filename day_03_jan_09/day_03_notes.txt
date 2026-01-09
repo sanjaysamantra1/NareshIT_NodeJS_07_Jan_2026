@@ -1,0 +1,71 @@
+Variables
+=========
+-Variables can be declared by using the below 3 keywords
+    1. var
+    2. let 
+    3. const
+
+
+        var                     let                         const
+========================================================================
+1. Since Begining          1. ECMAScript-6              1. ECMAScript-6
+2. value can be changed    2. value can be changed      2. value cannt be changed
+3. initialization - not    3. initialization-not        3. initialization - mandatory
+4. can be re-declared      4. cann't be re-declared     4. cann't be re-declared
+5. function/global         5. block/function/global     5. block/function/global
+6. hoisting - yes          6. hoisting - yes            6. hoisting - yes
+7. TDZ - No                7. TDZ - yes                 7. TDZ - yes
+
+Variable Scope
+==============
+1. global : declared outside functions & accesible anywhere in the script 
+2. function : declared inside a function and accessible anywhere in the function
+3. block : declared inside a block and accessible only inside a block
+
+
+Strict 
+======
+-in normal few mistakes are ignored
+-in strict mode mistakes are converted to errors
+-'use strict' enables strict mode
+
+strcit checks:
+-variable declaration without var/let/const is not allowed
+-Duplicate parameter name not allowed
+
+
+
+How Javascript Works
+====================
+-When a JavaScript program runs, 1 Global Execution Context (GEC) is created.
+-For every function call, a new Function Execution Context (FEC) is created.
+-Execution Context = the environment in which code executes.
+-Each execution context has two phases: 
+	1. creation phase. (Memory is allocated for variables and functions; 'var' variables are initialized with undefined)
+	2. execution phase. (Code is executed line by line; variables receive their assigned values and functions are invoked)
+
+
+Hoisting:
+=========
+-hoisting is a mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase, before the code is executed.
+-Variables declared with var are hoisted, but their values are not initialized. They are given an initial value of undefined.
+-Variables declared with let and const are also hoisted but are not initialized. Accessing them before declaration results in a ReferenceError because they are in the "temporal dead zone."
+-Function declarations are hoisted, meaning you can call them before they appear in the code.
+
+Type			   Hoisted?			   Initialized?			  Usable before declaration?
+=========================================================================================
+var					✅ Yes				❌ Undefined			⚠️ Allowed but undefined
+let					✅ Yes				❌ No					❌ ReferenceError
+const				✅ Yes				❌ No					❌ ReferenceError
+Func Declaration	✅ Yes				✅ Yes					✅ Allowed
+Func Expression 	✅ Yes				❌ Undefined			❌ TypeError
+
+
+
+Temporal Dead Zone
+==================
+-The period between entering scope and being initialized where they cannot be accessed. 
+ This period is the temporal dead zone (TDZ).
+-The state where variables are un-reachable. They are in memory, but they aren't usable.
+-The let and const variables exist in the TDZ from the start of their enclosing scope until they are initialized.
+-if a let/const variable is accessed before its initialization, it would throw a ReferenceError. Because of the TDZ.

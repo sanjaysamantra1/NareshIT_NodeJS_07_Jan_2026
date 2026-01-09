@@ -1,0 +1,18 @@
+<script>
+    console.log('Global Code Starts...')
+    console.log('a ', a); // yes  - undefined (Hoisting)
+    // console.log('b ', b); // No - <value unavailable> Temporal Dead Zone
+    // console.log('c ', c); // No - <value unavailable> Temporal Dead Zone
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    let d;
+    console.log(`a:${a} b:${b} c:${c} d:${d}`); // 10   20    30
+
+    function add(x, y) {
+        return x + y;
+    }
+    var addResult = add(2, 3);
+
+    console.log('Global Code Ends...')
+</script>

@@ -85,3 +85,4 @@ How to run a typescript file in nodejs
 1. create a typescript file (abc.ts)
 2. compile that Typescript file to generate equivalent javascript code  
     npx tsc abc.ts
+3. node abc.js
