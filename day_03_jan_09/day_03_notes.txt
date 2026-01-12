@@ -16,6 +16,8 @@ Variables
 6. hoisting - yes          6. hoisting - yes            6. hoisting - yes
 7. TDZ - No                7. TDZ - yes                 7. TDZ - yes
 
+
+
 Variable Scope
 ==============
 1. global : declared outside functions & accesible anywhere in the script 

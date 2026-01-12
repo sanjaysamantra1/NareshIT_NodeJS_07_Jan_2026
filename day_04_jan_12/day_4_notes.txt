@@ -1,0 +1,53 @@
+Functions
+=========
+1. Pre-Defined  / inbuilt
+    -Functions are already written, we just have to use them
+    -console.log(), document.write(), window.alert(), Math.max()
+2. User-Defined 
+    -We write the function logic and we use them
+
+
+
+
+Functions
+==========
+1. Function Declaration / Named Functions
+2. Function Expressions / anonymous
+3. IIFE / Self Invoked Function 
+4. Arrow Function (ES_6)
+
+
+Function Declarations  vs Function Expressions
+==============================================
+-Function Declarations are named, Function Expressions are anonymous
+-Function Declarations are hoisted, Function Expressions are anot hoisted
+
+
+Self Invoked Function 
+=====================
+-these types of functions can be called only once
+-to execute some logic only once during the page/application load
+
+
+Arrow Function
+===============
+-ES_6   2015
+-Concise Syntax
+-implicit return
+-no function keyword
+-no body
+-dont have their own 'this' binding
+
+
+Arrow Function Limitations
+===========================
+-Arrow functions shouldn't be used as object methods.
+-in Arrow functions 'this' is static, if we expect value of 'this' to be dynamic
+ avoid arrow function.
+
+
+ this
+ ====
+ Regular : this - how/where the function is called
+ Arrow  : this - where the function is written, outer scope (lexical scope)
+
