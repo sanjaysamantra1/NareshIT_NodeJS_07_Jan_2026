@@ -1,0 +1,22 @@
+<script>
+    // to call multiple apis with the same base URL and headers
+    function createApiClient(baseUrl, token) { // createApiClient is function factory
+        return async function request(endpoint) {
+            const response = await fetch(`${baseUrl}${endpoint}`, {
+                headers: { Authorization: `Bearer ${token}` }
+            })
+            return response.json();
+        }
+    }
+    jsonplaceholderAPI = createApiClient('https://jsonplaceholder.typicode.com', 'token12345');
+    console.dir(jsonplaceholderAPI)
+
+    let userPromise = jsonplaceholderAPI('/users')
+    userPromise.then(data => console.log(data))
+
+    let commentsPromise = jsonplaceholderAPI('/comments')
+    commentsPromise.then(data => console.log(data))
+
+    let todosPromise = jsonplaceholderAPI('/todos')
+    todosPromise.then(data => console.log(data))
+</script>

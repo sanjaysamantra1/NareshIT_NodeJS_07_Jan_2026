@@ -1,0 +1,19 @@
+<script>
+    // const [color, setColor] = useState("red");  // react useState
+    function useState(initialValue) {
+        let value = initialValue;
+        function getValue() {
+            return value;
+        }
+        function setValue(newValue) {
+            value = newValue;
+        }
+        return [getValue, setValue];
+    }
+    let [color, setColor] = useState('Red');
+    console.log(color()); // Red
+    setColor('Blue');
+    console.log(color()); // Blue
+
+    console.dir(color)
+</script>

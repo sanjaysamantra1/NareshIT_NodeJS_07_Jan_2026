@@ -1,0 +1,33 @@
+Q. What is CallStack 
+-Callstack is datastructure it keeps track of function calls in a javascript program.
+-It follows Last In First Out Principle
+
+Javascript uses callstack to 
+-know which function is currently being executed
+-where to return after a function finishes execution
+-manages execution order
+
+1. when a function is called, it is pushed to callstack
+2. when a function finishes, it is popped out of the callstack
+3. execution goes back to the previous place
+
+
+
+Closure
+=======
+-A closure allows an inner function to remember variables from outer functions.
+-A closure is created when an inner function remembers and continues to access variables from its outer function/lexical scope, even after the outer function has finished execution.
+
+Note:
+-closure is not created for outer functions.
+-closure is created for inner functions, only if the inner function access outer function variable
+
+
+
+Common Uses of closure
+=======================
+1. Data Encapsulation ( Private Varibales )
+2. Function Factories
+
+Encapsulation = Data Hiding + allow to access data through member functions
+Function Factories : a function that creates and returns another function
