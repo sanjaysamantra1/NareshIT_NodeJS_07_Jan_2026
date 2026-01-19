@@ -1,0 +1,15 @@
+<script>
+    function add(a, b) {
+        console.log(`Addition is ${a + b}`)
+    }
+    add(10, 20);
+
+    function add(a) {
+        return function (b) {
+            console.log(`Addition is ${a + b}`)
+        }
+    }
+    let add10 = add(10);
+    add10(2); // 12
+    add10(3); // 13
+</script>
