@@ -1,0 +1,45 @@
+<2015    ES_5
+2015     ES_6  ( const, let , arrow , module, promise, spread, REST .......)
+2016     ES_7  ( ** )
+2017     ES_8  
+2018     ES_9  
+2019     ES_10  
+2020     ES_11  
+2021     ES_12  
+2022     ES_13  
+2023     ES_14  
+2024     ES_15  
+2025     ES_16  (latest)
+
+
+ES_6 and Beyond
+===============
+-let & const
+-template literal
+-exponent operator
+-optional chaining ?.
+-default parameter
+-REST 
+-Spread
+-for-in, for-of
+-de-structuring(object,array)
+-class
+-map,Set
+-module
+-promise, async / await
+
+
+
+OOP
+----
+class - structure/blueprint/template for creating Object 
+		class has only logical existance
+		class doesn't have physical existance
+		
+object - Real Entity
+		 every instance of a class
+		 Object has physical existance
+
+-a class in javascript is created using constructor function(ES-5).
+-a class in javascript is created using class keyword.(ES-6).
+-class contains variables(states/properties) and methods(behaviours) inside it.
