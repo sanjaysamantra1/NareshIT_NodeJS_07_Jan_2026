@@ -1,0 +1,37 @@
+CallBack
+--------
+-A Callback is a function that is passed into another function as an argument to be executed later.
+-callback function is run inside of the function it was passed into.
+-A function that accepts other functions as arguments is called a higher-order function,
+ which contains the logic for when the callback function should be executed.
+
+Callback hell
+=============
+-Callback hell will have multiple callbacks nested after each other. 
+-It can happen when you do an asynchronous activity that’s dependent 
+ on a previous asynchronous activity.
+-Solutions to callback hell:
+	1. Split functions into smaller functions.
+	2. Using Promises.
+	3. Using Async/await.
+
+
+
+Promise
+=======
+-A promise is an object that holds the future value of an asynchronous operation.
+-A Promise object represents a value that is not available now, but will be resolved/available at some point in the future.
+-Promise object can have different states:- pending, resolved/fulfilled, rejected.
+ex:-if we request some data from a server, promise promises us to get that data 
+ that we can use in the future. 
+
+
+ex: 
+// fetch() returns a promise Object
+let usersPromise= fetch('https://jsonplaceholder.typicode.com/users');
+console.log(usersPromise);
+
+How to read data from a promise
+-------------------------------
+1. then()
+2. async-await
