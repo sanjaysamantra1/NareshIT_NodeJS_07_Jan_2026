@@ -1,0 +1,225 @@
+How to Maintain multiple NodeJS versions
+========================================
+-NVM : Node version Manager
+-NVM is a version manager for node.js
+-Multiple nodeJS versions can be maintained with the help of NVM.
+-It allows to easily switch the Node.js version.
+  NVM for Mac - https://tecadmin.net/install-nvm-macos-with-homebrew/
+  NVM for windows - https://github.com/coreybutler/nvm-windows
+
+
+NVM useful commands
+===================
+-nvm help
+ nvm
+-Check NVM is installed
+ nvm --version
+-List all the available Node Versions to be installed
+ nvm list available
+-List all the installed Node Versions
+ nvm list installed / nvm ls
+-To install latest node version
+ nvm install node
+-To install a particular version of node
+ nvm install 24.9.0
+-To uninstall a particular version of node
+ nvm uninstall 16.0.0
+-To switch node version
+ nvm use 16.0.0
+-To check currently used node version
+ nvm current / node -v
+
+
+ NPM (Node Package Manager)
+==========================
+-npm is the standard package manager for NodeJS Applications.
+-Node Package Manager (NPM) provides two main functionalities:
+	1.Online repositories for node.js packages
+	which are searchable on https://www.npmjs.com/
+	2.Command line utility to install Node.js packages, do version management and dependency management of Node.js packages.
+	
+-NPM comes bundled with Node.js installables.
+-To verify npm version, Run the below command  
+ npm --version/-v
+ 
+-initialize an NPM  project
+ npm init
+ npm init -y (everything default)
+
+
+-Install a Module using npm
+ npm install <Module Name>
+
+-npm install 
+ install all the modules as specified in package.json
+ 
+-Install the package globally
+ npm install <package_name> -g
+ 
+-Save the package as dependency
+ npm install <package_name> --save
+ 
+-Save the package as dev-dependency
+ npm install <package_name> --save-dev 
+ 
+-Install the latest version of a package
+ npm install <package_name>@latest
+ 
+-Install any particluar version of a package
+ npm install <package_name>@<version_number>
+ npm install bootstrap@4.0.1
+ 
+-Uninstalling Packages/Modules via NPM
+ npm uninstall <package_name>
+
+-check outdated packages
+  npm outdated
+
+-Audit for security issues
+ npm audit
+ npm audit fix
+ 
+-Update Packages/Modules via NPM
+ npm update <package_name>
+ 
+-Searching a particular package
+ npm search <package_name>
+ 
+-List all Installed Packages Locally
+ npm list/ls
+
+-List all Installed Packages Globally
+ npm ls -g
+ 
+-Run a Script
+ npm run <script-name>
+
+
+npm i nodemon 			 	--> helps during development and production dependencies
+npm i nodemon --save  		--> helps during development and production dependencies
+npm i nodemon --save-dev  	--> helps during development not in production(-D)
+npm i nodemon --no-save 	--> installs but does not add the entry to the package.json file dependencies
+npm i nodemon --save-optional --> installs and adds the entry to the package.json file optionalDependencies
+npm i --no-optional  --> will prevent optional dependencies from being installed
+
+
+
+
+
+NPM Global vs Local Installation
+================================
+-By default, NPM installs any dependency in the local mode. 
+-Local mode refers to the package installation in node_modules directory of our project.
+-Locally installed packages are accessible via require() method. 
+ ex: npm i minimist
+    const minimist = require('minimist');
+-Run the below command command to list down all the locally installed modules. 
+ npm ls
+-few packages that should be locally installed:
+ 1.minimist  2.express  3.lodash  4.bootstrap  5.axios  6.rxjs
+-If a module needs to be used inside our code using require(), then install that module locally.
+ 
+ 
+-Globally installed packages/dependencies are stored in system directory. 
+-Such dependencies can be used in CLI (Command Line Interface), they are not meant to be imported using require() in Node application directly. 
+ ex:- npm i nodemon -g
+      const nodemon = require('nodemon'); //No
+-Few packages that should be globally installed: 
+ 1.npm   2.nodemon  3.typescript  4.create-react-app  5.angular-cli  6.json-server
+-Run the below command command to list down all the globally installed modules. 
+ npm ls -g
+-If we want to use a module in shell/command-prompt not using require(), install that globally.
+ 
+
+
+
+
+yarn package Manager
+====================
+-Yarn is an open-source package manager used to manage dependencies in JavaScript projects. 
+-It assists with the process of installing, updating, configuring, and removing packages/dependencies
+
+npm install -g yarn
+
+yarn --version
+yarn --help
+
+yarn init -y
+yarn add minimist
+yarn add mocha --dev
+yarn add minimist@latest
+yarn add minimist@2.3.1
+yarn install 
+yarn install --production
+yarn install --offline ( trigger an error if any required dependencies are not available in local cache)
+yarn remove minimist
+yarn upgrade <package>
+yarn run [script-name]
+yarn list
+yarn outdated
+yarn audit     (runs a security audit)
+
+
+
+
+
+
+ 
+package.json
+============
+-Contains Project Metadata(name, version, author, description, scripts, main , dependencies)
+-Helps NPM to understand how the project should be handled along with its dependencies.
+-maintains version range (^ , ~)
+-Nested Dependencies : No
+-It's Created(tools) & maintained by Developers
+
+package-lock.json
+=================
+-Automatically generated by npm when we install dependencies.
+-Exact version of dependency
+-Nested Dependencies : Yes
+-The resolved URLs (npm registry or elsewhere)
+-Ensures reproducible builds (everyone gets the same dependency versions)
+
+
+package.json  VS  package-lock.json
+===================================
+-package.json maintains only the main packages's information.
+ "cors": "^2.8.5"
+ "bootstrap" : "^5.2.1"
+-package-lock.json containes the exact version. 
+	"bootstrap" : "5.3.2" (npm update bootstrap)
+-package-lock.json maintains main packages's information + nested-packages information
+    "node_modules/cors": {  
+      "dependencies": {
+        "object-assign": "^4",
+        "vary": "^1"
+      }
+-package.json lists the required dependencies and their version ranges, but not the exact versions to be installed.
+-package-lock.json is used to ensure that the same dependencies are installed across different environments and prevent conflicts due to different versions being installed.
+
+-package.json is created and modified manually by the developer.
+-It is automatically generated by npm and updated whenever we install or update packages.
+
+-in package.json (~) tells go up to hot-fixes 1.4.X if 1.4.1 is installed
+ in package.json (^) checks if there is a newer version under 1.x.x if 1.4.1 is installed
+ in package-lock.json - there is neither ~ nor ^
+
+Ex: bootstrap - 5.1.3
+              major.minor.hotfix
+
+
+NPX
+===
+NPX : Node Package Executer (used to execute Node.js packages)
+-Run Packages without installing them.
+-When you install NPM version 5.2.0 or higher, get NPX installed
+-we can install npx using the below command
+ npm i -g npx
+-npx helps us avoid versioning, dependency issues and installing unnecessary packages that we just want to try out.
+-npx helps running utility tools without installation (eslint, mocha)
+ npx eslint .
+ npx mocha
+-ex:npx create-react-app my-sample-react-app
+    npx nodemon file1.js	
+	npx nodemon file1.js -y

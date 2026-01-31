@@ -1,0 +1,29 @@
+Node.js Syllabus
+================
+-Node.JS - Introduction, Advantages
+-Traditional Web Server Model, Node.js Process Model
+-Local Environment SetUp
+-Node.js Console - REPL
+-NPM , NPX , NVM
+-Global Objects
+-Debugging Node JS Application
+-Modules: Core, Local , 3rd party
+-Core Modules : ( OS , FS , URL , HTTP)
+-Events (Event Loop,Event Emitter)
+-Buffer & Streams
+-Creating web server & Handling http requests (HTTP)
+-Express Framework  (routing , middleware, Pagination, Sorting, Filtering, Versioning APIs)
+-Request validation (joi,express-validator)
+-Logging & Error Handling 
+-Template Engines (Jade/Pug, vash, EJS, handlebars)
+-NodeJS & MongoDB Connection
+-Mongoose : ODM for MongoDB
+-Redis (Caching)
+-Swagger  (API Documentation)
+-Unit testing (Mocha, Jasmine)
+-graphQL : Query Language for APIs
+-WebSockets / Socket.IO ( chat, notifications)
+-Authentication/Authorization : JWT
+-Environment Variables & Config Management (dotenv, config)
+-Security : Helmet, CORS, Rate Limiting, Input Sanitization, Environment Variable Protection
+-Deployment : Render
