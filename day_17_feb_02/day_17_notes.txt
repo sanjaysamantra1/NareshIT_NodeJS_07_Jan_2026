@@ -53,3 +53,14 @@ backtrace, bt         Print the current backtrace
    Select "Node.js" for initial setup.
    b. go to the JS file add debug points
    c. go to Debug Panel, click 'Run' button
+
+
+NodeJs Modules
+==============
+-A way of encapsulating code in to separate logical units.
+-Module:A set of properties and functions we want to include in our application.
+-In Node.js module system, each file is treated as a separate module.
+-Node.js includes three types of modules:
+	1. Core(Built-in) Modules     	  (os,fs,http,path,url,crypto)
+	2. Local(Custom) Modules    	  (created locally in our application)
+	3. Third Party(External) Modules  (can be installed using NPM, and can be used) ex:-minimist,express,mongoose,lodash,moment,chalk,cors,axios
