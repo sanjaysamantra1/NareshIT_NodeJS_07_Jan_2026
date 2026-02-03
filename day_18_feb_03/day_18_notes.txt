@@ -31,3 +31,50 @@ file encoding
 ex: bufferData = fs.readFileSync("./customer.json");
 	stringData = fs.readFileSync("./customer.json", "utf8");
 Note: UTF-8 is an encoding system for Unicode. It can translate any Unicode character to a matching unique binary string.
+
+
+HTTP Module
+===========
+-HTTP module can create an HTTP server.
+-Receives the request from client & returns response back to the client.
+
+
+-headers, URL, method and body data can be collected from request objects.
+-Make routing decisions based on URL and/or other data in request objects.
+-Send headers, HTTP status codes and response data via response objects.
+
+createServer()   		Returns a new instance of Server.
+listen(PORT,CallBack)   Binds the server to listen on a specific port
+close()					Stops the server from listening to more requests
+
+response.setHeader('Content-Type', 'text/html');
+response.writeHead() should be called first when initiating a response, allows 	us to set up the HTTP response code and headers we are sending back.
+
+response.write(chunk[, encoding][, callback]) allows us to send a chunk of data as part of our response.
+
+response.end() signalizes the response as complete, MUST be called once per response.
+
+
+Note:Unless you change the path to your favicon in an HTML document, browsers will (usually) make a request to the /favicon.ico path in order to get the favicon of your server.
+
+
+HTTP Methods
+============
+https://testfully.io/blog/http-methods/
+
+GET - Retrieve a resource/Retrieve data from DB
+	  search	  
+POST - to send data to server  ( sign up ) 
+       (create a resource/create a new record in DB)
+	   to fetch data securly    (send params in body not in URL)
+PUT - update data/create or replace a resource  
+	  update user's profile information 	  
+PATCH - update/modify a particular resource(partial update)
+        update user password
+DELETE - Remove a resource/delete a record from DB 
+		 Delete naukri account
+OPTIONS - information about the Permitted HTTP methods (methods/content type)
+       Identifying which HTTP methods a resource supports, e.g. can we DELETE it or update it via a PUT?
+HEAD - method returns info about resource (http version/length/type)
+	  used to request the headers of a resource without actually fetching the body of the resource.
+	  HEAD request is a way to retrieve metadata about a resource, such as its size, modification date, or content type
