@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { dirname } = require('path');
 
 const dirName = 'temp';
 const fileName = `${dirName}/demo.txt`;
@@ -29,3 +30,11 @@ console.log(fs.existsSync(newFileName))
 // statistics of a file
 let statObj = fs.statSync(newFileName);
 console.log(statObj.size, statObj.ctime, statObj.mtime)
+
+// delete file
+fs.unlinkSync(newFileName)
+console.log('file deleted')
+
+// delete the directory
+fs.rmdirSync(dirName)
+console.log('folder deleted')
