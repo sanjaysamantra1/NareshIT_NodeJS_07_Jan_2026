@@ -1,0 +1,33 @@
+Express Routing
+===============
+-Routing refers to how an application’s endpoints (URIs) respond to client requests.
+-Route paths, in combination with a request method, define the endpoints at which requests can be made.
+-Route paths can be strings, string patterns, or regular expressions
+
+Examples:
+app.get('/ab?cd');   // will match acd and abcd
+app.get('/ab+cd');   // will match abcd, abbcd, abbbcd
+app.get('/ab*cd');   // will match abcd, abxcd, abRANDOMcd, ab123cd
+app.get('/ab(cd)?e'); // will match /abe and /abcde
+app.get(/.*fly$/);  // will match butterfly and dragonfly, but not butterflyman, dragonflyman
+
+app.all('*',(req,res)=>{
+    res.status(404).send('No such page found')
+});
+
+
+
+
+Express PathParam & QueryParam
+==============================
+1. Path-Param
+	ex:- /users/101
+	const userId = req.params.userId;
+	
+Few More Path Params:
+app.get('/products/:productId([0-9])/ratings')
+app.get('/products/:productId([0-9])/ratings/:ratingId')
+
+2. Query-param
+	ex:- /search?searchWord=skybag&filter=something
+	const {searchWord,filter} = req.query;
