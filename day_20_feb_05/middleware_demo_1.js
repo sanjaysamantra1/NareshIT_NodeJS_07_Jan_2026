@@ -3,13 +3,13 @@ const users = require('../data/users.json')
 const employees = require('../data/employees.json')
 const products = require('../data/products.json')
 
-const app = express();
-
 const loggerMiddleware = (req, res, next) => {
     console.log('I am Logger middleware');
     console.log(`Method: ${req.method}  URL: ${req.url}  Time: ${new Date().toLocaleTimeString()}`)
     next();
 }
+const app = express();
+app.use(loggerMiddleware); // for all the routes
 
 // Home Route
 app.get('/', (req, res) => {
