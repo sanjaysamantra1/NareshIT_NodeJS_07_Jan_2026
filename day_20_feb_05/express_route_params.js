@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+app.use(express.json()); // to read json data from request body
+// application level middleware 
 
 let users = [
     { "id": 1, "name": "sanjay", "sal": 5000, "gender": "male" },
