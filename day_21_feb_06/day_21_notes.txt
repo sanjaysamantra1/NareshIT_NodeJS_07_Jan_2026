@@ -1,0 +1,44 @@
+Express application generator
+=============================
+- express-generator is used to quickly create an application.
+
+1. npx express-generator my-express-app --no-view
+2.  cd my-express-app
+    npm i
+3. npm start
+
+
+my-express-app
+    app.js          (Main File)
+
+
+
+Express.js Request Object Properties
+====================================
+req.app
+req.body
+req.cookies
+req.hostname
+req.ip
+req.method
+req.params
+req.path
+req.protocol
+req.query
+
+
+
+Response methods
+================
+The methods on the response object (res) in the following table can send a response to the client, and terminate the request-response cycle. If none of these methods are called from a route handler, the client request will be left hanging.
+
+Method	Description
+res.send()	Send a response of various types. (Buffer / JSON / HTML / String)
+res.end()	End the response process.
+res.json()	Send a JSON response.
+res.jsonp()	Sends JSON wrapped inside a callback function (for cross-domain requests).
+res.redirect()	Redirect a request.
+res.render()	Render a view template.
+res.sendFile()	Send a file as an octet stream.
+res.download()	Prompt a file to be downloaded.
+res.sendStatus()	Set the response status code and send its string representation as the response body.
