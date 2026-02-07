@@ -1,0 +1,9 @@
+Third-party middleware 
+   cors , body-parser, cookie-parser
+
+Error-handling middleware
+   Note : To manually trigger error handling middleware, we can pass an error object to the next() function
+   try{
+   }catch(err){
+	 next(err); // transfers error object to error handling middleware
+   } 
