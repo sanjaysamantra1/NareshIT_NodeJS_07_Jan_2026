@@ -7,3 +7,25 @@ Error-handling middleware
    }catch(err){
 	 next(err); // transfers error object to error handling middleware
    } 
+
+
+Pagination
+==========
+http://localhost:3000/employees?page=1&limit=10
+http://localhost:3000/employees?page=3&limit=10
+
+
+
+filter
+======
+http://localhost:3000/employees?gender=male
+
+
+sort
+====
+http://localhost:3000/employees?sort=sal&order=asc
+
+
+Combine
+=======
+http://localhost:3000/employees?page=1&limit=10&gender=male&sort=sal&order=desc

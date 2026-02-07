@@ -4,13 +4,7 @@ const app = express();
 app.use(express.json()); // to collect request body
 app.use(cors());
 
-let employees = [
-    { "id": 1, "name": "sanjay", "sal": 5000, "gender": "male" },
-    { "id": 2, "name": "geeta", "sal": 8000, "gender": "female" },
-    { "id": 3, "name": "sameer", "sal": 7000, "gender": "male" },
-    { "id": 4, "name": "sita", "sal": 9000, "gender": "female" },
-    { "id": 5, "name": "deepak", "sal": 8000, "gender": "male" }
-];
+let employees = require('../data/employees.json')
 
 let myErrorHandler = (err, req, res, next) => {
     const errorStatus = err.status || 500;
@@ -26,7 +20,34 @@ let myErrorHandler = (err, req, res, next) => {
 
 // Get All employees
 app.get('/employees', (req, res) => {
-    res.json(employees)
+    let { page = 1, limit = 10, sortBy = 'id', order = 'asc', gender } = req.query; // object de-structuring
+
+    // Filter
+    let filteredData = [...employees];
+    if (gender) { // filter is required
+        filteredData = filteredData.filter(emp => emp.gender === gender);
+    }
+
+    // Sort
+    filteredData.sort((emp1, emp2) => {
+        if (order == 'asc') {
+            return emp1[sortBy] > emp2[sortBy] ? 1 : -1;
+        } else {
+            return emp1[sortBy] > emp2[sortBy] ? -1 : 1;
+        }
+    });
+
+    // pagination
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+    const paginatedData = filteredData.slice(startIndex, endIndex);
+    res.json({
+        totalRecords: filteredData.length,
+        page,
+        limit,
+        data: paginatedData
+    })
 })
 // get 1 employee (Path Param)
 app.get('/employees/:id', (req, res, next) => {
