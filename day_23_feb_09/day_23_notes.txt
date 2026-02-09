@@ -1,0 +1,6 @@
+events Module
+==============
+-Emit custom events, listen custom event
+-EventEmitter is a class
+-emit() used to emit events
+-on() used to listen events
