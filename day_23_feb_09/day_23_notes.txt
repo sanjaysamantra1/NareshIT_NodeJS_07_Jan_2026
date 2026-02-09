@@ -37,6 +37,16 @@ Event Loop
 https://www.jsv9000.app/
 
 
+NodeJS Buffers
+==============
+-Buffer represents a fixed-length sequence of bytes.
+-Buffer = Temporary Memory used to handle Binary Data( files, images, videos etc )
+-Buffer is a built-in object used to handle binary data directly, without needing to convert it into string or other format.
+-to preocess raw binary data, such as reading data from file handling network communication.
+-Buffers are used with readable & writable streams for efficient data handling, especially for large files.
+-Buffers are essential when dealing with image data. Images are typically handled as binary data while sending over a network.
+
+
 Node.js Streams
 ===============
 -Streams are objects that let you read data from a source or write data to a destination in continuous fashion.
