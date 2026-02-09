@@ -4,3 +4,52 @@ events Module
 -EventEmitter is a class
 -emit() used to emit events
 -on() used to listen events
+
+
+CallStack
+=========
+-JavaScript engine uses a call stack to manage execution contexts: the Global Execution Context and Function Execution Contexts.
+-The call stack works based on the LIFO principle i.e., last-in-first-out.
+-When we execute a script,JavaScript engine creates a Global Execution Context and pushes it on top of the call stack.
+-Whenever a function is called, the JavaScript engine creates a Function Execution Context for the function, pushes it on top of the Call Stack, and starts executing the function.
+-If a function calls another function, the JavaScript engine creates a new Function Execution Context for the function that is being called and pushes it on top of the call stack.
+-When the current function completes, the JavaScript engine pops it off the call stack and resumes the execution where it left off in the last code listing.
+-The script will stop when the call stack is empty.
+
+-Macro tasks include keyboard events, mouse events, timer events, network events, Html parsing,
+ changing Url etc. A macro task represents some discrete and independent work.
+-Microtasks, are smaller tasks that update the application state and should be executed before
+ the browser continues with other assignments such as re-rendering the UI. 
+ Microtasks include promise callbacks and DOM mutation changes. Microtasks enable us to execute
+ certain actions before the UI is re-rendered, thereby avoiding unnecessary UI rendering that
+ might show an inconsistent application state.
+
+
+Event Loop 
+----------
+-event loop is a constantly running process that coordinates the tasks between 
+ call stack and callback queue to achieve concurrency.
+-event loop monitors both the 'callback queue' and  'call stack'.
+-If the callstack/executionstack is not empty, the event loop waits until it is empty and 
+	places the next function from the callback queue to the call stack. 
+-If the callback queue is empty, nothing will happen.
+
+https://www.jsv9000.app/
+
+
+Node.js Streams
+===============
+-Streams are objects that let you read data from a source or write data to a destination in continuous fashion.
+-When we try to read a file, the contents of the file is read and all the content gets saved in memory
+-Streams read chunks of data piece by piece, processing its content without keeping it all in memory.
+
+-4 types of streams in Node.js:
+1.Readable    fs.createReadStream()
+2.writeable   fs.createWriteStream()
+3.Duplex      net.Socket 
+  A Duplex stream is both readable and writable, meaning it can consume input and produce output at the same time.
+4.Transform
+
+
+Piping the Streams:
+-Piping is a mechanism where we provide the output of one stream as the input to another stream.
