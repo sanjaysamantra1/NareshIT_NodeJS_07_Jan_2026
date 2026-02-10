@@ -23,3 +23,36 @@ joi Validator
 -Use abortEarly: false to show all errors at once.
   const { error } = schema.validate(req.body, { abortEarly: false });
 -Support custom validators
+
+
+-Logging
+=========
+-To improve error management, we can integrate logging services
+-Winston or Morgan can be used for logging error details to external files or monitoring services. 
+-These are helpful for production environments
+
+Winston
+=======
+-winston is a logging library with support for multiple transports(console, file)
+
+// Configure Winston logger
+const logger = winston.createLogger({
+  level: 'info', // Log level: 'error', 'warn', 'info', 'http', 'verbose', 'debug', 'silly'
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.Console(), // Log to the console
+    new winston.transports.File({ filename: 'app.log' }) // Log to a file
+  ]
+});
+
+// Middleware to log each request
+app.use((req, res, next) => {
+  logger.info(`HTTP ${req.method} ${req.url}`);
+  next();
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  logger.error(`Error: ${err.message}`);
+  res.status(500).send('Something went wrong!');
+});
