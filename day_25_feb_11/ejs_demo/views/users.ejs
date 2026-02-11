@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1 class="text-center">User List</h1>
+
+  <div class="container">
+    <div class="row">
+      <% users.forEach(function(user){ %>
+        <div class="card col-sm-3">
+          <img src="https://toppng.com/uploads/preview/icons-logos-emojis-user-icon-png-transparent-11563566676e32kbvynug.png" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title"><%= user.name %></h5>
+            <p class="card-text"><%= user.email %></p>
+            <p class="card-text"><%= user.phone %></p>
+            <p class="card-text"><%= user.address.city %></p>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+        <% }); %>
+    </div>
+  </div>
+
+</body>
+
+</html>
