@@ -33,7 +33,7 @@ db.order.aggregate([
         }
     },
     {
-        $sort:{totalAmount: 1}
+        $sort:{totalAmount: -1}
     },
     {
         $limit:3

@@ -23,3 +23,24 @@ ex: db.cities.aggregate([
 ])
 
 $match, $group, $limit, $project, $sort, $addFields, $count, $lookup, $out , $unwind, 
+
+
+Join In MongoDB 
+===============
+-use $lookup stage in the aggregation pipeline to perform joins between collections
+{
+  "$lookup": {
+    "from": "foreign_collection",
+    "localField": "field_in_current_collection",
+    "foreignField": "field_in_foreign_collection",
+    "as": "result"
+  }
+}
+from → The name of the collection we want to join.
+localField → The field in the current collection.
+foreignField → The field in the foreign collection that matches localField.
+as → The output field where the joined data will be stored as an array.
+
+
+$unwind → Flattens arrays from $lookup.
+$lookup + $expr → Allows advanced joins with custom conditions.
