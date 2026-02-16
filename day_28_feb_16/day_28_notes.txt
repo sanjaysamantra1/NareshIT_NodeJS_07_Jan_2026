@@ -1,0 +1,14 @@
+1. Create a project
+   npx express-generator mongodb-demo --noview_agenda
+
+2. install mongoDB 
+    npm i mongodb
+
+3. connect to Database 
+
+
+
+
+Flow
+====
+app.js --> Route --> Controller --> Service --> Database
