@@ -17,3 +17,42 @@ MongoDB Atlas
 
 -Connect to your cluster
 -Add your own data / Load Sample Data
+
+
+
+ODM (Object-Document Mapping)
+=============================
+-ORM : Used with relational databases like MySQL and PostgreSQL
+-ODM : Used with non-relational databases like MongoDB, Cassandra, and Redis
+-ODM maps between objects in code and documents in a NoSQL database collection.
+-ODM provides a schema-based solution for modeling application data.
+-built-in features like type casting, validation, query building etc.
+-They streamline database operations, enhance code organization, and boost developer productivity
+-There are many ODM/ORM solutions available - Mongoose, Sequelize
+
+
+Mongoose
+========
+-Mongoose is a MongoDB object modeling tool.
+-Mongoose is a JavaScript object-oriented programming library that creates a connection between MongoDB and the Node.js.
+-Provides features like: Data validation, Middleware and hooks, Schema enforcement, Abstraction
+
+https://mongoosejs.com/docs/guide.html
+https://mongoosejs.com/docs/validation.html#built-in-validators
+
+
+Mongoose Example
+================
+1. create a project
+   npx express-generator mongoose_demo --no-view
+
+2. install mongoose   
+   npm install mongoose
+
+3. connect MongoDB
+  await mongoose.connect('mongodb://localhost:27017/nareshit_jan_2026')
+        console.log('MongoDB Connected successfully');
+
+4. create a Mongoose Model (Defines the structure of the data)  
+   user.model.ts    
+   create a Schema and create a Model using that schema
