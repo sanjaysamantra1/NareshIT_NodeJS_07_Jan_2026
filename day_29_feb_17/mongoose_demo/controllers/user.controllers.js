@@ -12,7 +12,7 @@ const fetchUserById = async (req, res) => {
     try {
         const user = await userService.getUserById(req.params.id);
         if (!user) {
-            res.status(204).json({ message: 'User Not Found' })
+            return res.status(204).json({ message: 'User Not Found' })
         }
         res.status(200).json(user);
     } catch (error) {
