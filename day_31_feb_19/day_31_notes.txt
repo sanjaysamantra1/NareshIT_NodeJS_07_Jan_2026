@@ -31,3 +31,18 @@ const value = await client.get("key");
 // To delete redis instance
 client.destroy();
 
+
+
+
+Redis with DataBase
+====================
+1. npm init -y
+
+2. in package.json add below line to enable ES module
+   "type":"module",
+
+3. install packages
+   npm i express cors axios redis mongoose
+
+4. write redis code in server.js
+   also add ROute,controller,service code
