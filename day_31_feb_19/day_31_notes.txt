@@ -1,0 +1,33 @@
+Redis Example
+=============
+1. npm init -y
+
+2. in package.json add below line to enable ES module
+   "type":"module",
+
+3. install packages
+   npm i express cors axios redis
+
+4. create a server.js file and add Redis code
+
+
+
+Redis Basic Example
+===================
+// import Redis
+import { createClient } from "redis";
+
+// Connect To Redis Server
+const client = await createClient()
+  .on("error", (err) => console.log("Redis Client Error", err))
+  .connect();
+
+// To Set a new Key:Value
+await client.set("key", "value");
+
+// To Read value from redis
+const value = await client.get("key");
+
+// To delete redis instance
+client.destroy();
+
