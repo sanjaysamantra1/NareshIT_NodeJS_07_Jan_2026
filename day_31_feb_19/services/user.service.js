@@ -1,11 +1,26 @@
-import userModel from '../models/user.model'
+import userModel from '../models/user.model.js'
+import { getFromCache, setInCache } from '../utils/redis_util.js'
 
 const getAllUsers = async () => {
-    return await userModel.find().lean();
+    const cacheKey = 'users:all';
+    const cachedUsers = await getFromCache(cacheKey);
+    if (cachedUsers) {
+        return { source: 'REDIS', data: cachedUsers }
+    }
+    let users = await userModel.find().lean();
+    await setInCache(cacheKey, users);
+    return { source: 'DataBase', data: users };
 }
 const getUserById = async (id) => {
+    const cacheKey = `user:${id}`;
+    const cachedUser = await getFromCache(cacheKey);
+    if (cachedUser) {
+        return { source: 'REDIS', data: cachedUser }
+    }
     try {
-        return await userModel.findById(id).lean();
+        let userData = await userModel.findById(id).lean();
+        await setInCache(cacheKey, userData);
+        return { source: 'DataBase', data: userData };
     } catch (err) {
         console.log(err)
     }
