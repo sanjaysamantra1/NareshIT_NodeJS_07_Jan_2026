@@ -1,0 +1,5 @@
+1. npm init -y
+
+2. npm i express cors mongoose 
+
+3. add code in server.js
