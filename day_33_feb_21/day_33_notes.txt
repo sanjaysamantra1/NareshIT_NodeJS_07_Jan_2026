@@ -1,0 +1,18 @@
+Swagger  (API Documentation)
+=============================
+-It’s very important to write documentation for APIs so that whoever consumes those APIs understand them, implement them, and play around with them.
+-Swagger is a software tool used for designing, building, documenting, and using RESTful APIs.
+-create, update and share API definitions with consumers.
+
+
+-All the operations should be mentioned in the file swagger.json
+-We can have custom CSS for our swagger page.
+
+Steps:
+1. npm init -y
+2. npm install swagger-ui-express 
+3. add server.js & add Routes code
+4. add the file swagger.json to define the operations.
+   http://rackerlabs.github.io/wadl2swagger/openstack/swagger/dbaas.json
+5. add the file swagger.css to define custom css
+6. Node server.js and try 'http://localhost:5000/api-docs/'

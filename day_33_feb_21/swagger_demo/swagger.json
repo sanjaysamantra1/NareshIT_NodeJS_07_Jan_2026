@@ -1,0 +1,121 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "User CRUD",
+        "version": "1"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "summary": "Get all users",
+                "description": "This API Returns All the users",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/UserResponse"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "UnSuccessful operation",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            },
+            "post": {}
+        },
+        "/users/{id}": {
+            "get": {
+                "summary": "Get 1 user",
+                "description": "This API Returns 1 user data by id",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in":"path",
+                        "name":"id",
+                        "description":"User id",
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                           "$ref": "#/definitions/UserResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "UnSuccessful operation",
+                        "schema": {
+                            "$ref": "#/definitions/InvalidResponse"
+                        }
+                    }
+                }
+            },
+            "patch": {},
+            "delete": {}
+        }
+    },
+    "definitions": {
+        "UserResponse": {
+            "type": "object",
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "dateOfBirth": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "InvalidResponse": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
