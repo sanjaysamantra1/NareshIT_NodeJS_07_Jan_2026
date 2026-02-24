@@ -1,0 +1,25 @@
+apollographql
+=============
+https://www.apollographql.com/docs
+https://www.apollographql.com/docs/apollo-server
+
+-Apollo Server is an open-source, spec-compliant GraphQL server 
+-Apollo Server is compatible with any GraphQL client, including Apollo Client. 
+-To build a production-ready, self-documenting GraphQL API that can use data from any source.
+-It has its own UI (doesn't use RURU)
+
+
+
+
+1. Create a project and set type="module"
+   npm init --yes 
+   npm pkg set type="module"
+   
+2. Install Dependencies
+   npm i @apollo/server graphql mongoose
+   
+3. Define graphQL Schema/typeDefs
+
+4. Define a resolver   
+
+5. Create an instance of ApolloServer
