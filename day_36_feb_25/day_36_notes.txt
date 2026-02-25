@@ -25,6 +25,9 @@ Coverage Report
 2. Add below script in package.json
   "test": "nyc --exclude 'spec/**/*.js' jasmine"
 
+  then run below command
+  'npm run test'
+
  
 Jasmine Terminologies
 =====================

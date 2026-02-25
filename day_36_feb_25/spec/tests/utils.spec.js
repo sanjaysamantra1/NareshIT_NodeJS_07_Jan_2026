@@ -1,4 +1,4 @@
-const { fibonacci, sumOfDigits } = require("../../my-utils")
+const { fibonacci, sumOfDigits, add } = require("../../my-utils")
 
 describe('this is test suite for my-utils file', () => { // test suite = group of testcase
     it('should verify fibonacci method', () => {
@@ -9,5 +9,11 @@ describe('this is test suite for my-utils file', () => { // test suite = group o
     })
     it('should verify sumOfDigits method', () => {
         expect(sumOfDigits(125)).toBe(8);
+    })
+    it('should verify add method', () => {
+        expect(add(10, 20)).toBe(30);
+        expect(add(-10, 20)).toBe(10);
+        expect(add(-10, -20)).toBe(-30);
+        expect(add(10, -20)).toBe(-10);
     })
 })  

@@ -1,3 +1,7 @@
+function add(a, b) {
+    return a + b
+}
+
 function fibonacci(n) {
     if (n <= 1) return n;
     let a = 0, b = 1;
@@ -37,6 +41,7 @@ function repeatString(str, times) {
 }
 
 module.exports = {
+    add,
     fibonacci,
     isPrime,
     sumOfDigits,
