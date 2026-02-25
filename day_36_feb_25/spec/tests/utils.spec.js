@@ -1,4 +1,4 @@
-const { fibonacci, sumOfDigits, add } = require("../../my-utils")
+const { fibonacci, sumOfDigits, add, isPrime, repeatString } = require("../../my-utils")
 
 describe('this is test suite for my-utils file', () => { // test suite = group of testcase
     it('should verify fibonacci method', () => {
@@ -15,5 +15,14 @@ describe('this is test suite for my-utils file', () => { // test suite = group o
         expect(add(-10, 20)).toBe(10);
         expect(add(-10, -20)).toBe(-30);
         expect(add(10, -20)).toBe(-10);
+    })
+    it('should verify isPrime method', () => {
+        expect(isPrime(1)).toBe(false);
+        expect(isPrime(2)).toBe(true);
+        expect(isPrime(4)).toBe(false);
+        expect(isPrime(9)).toBe(false);
+    })
+    it('should verify repeatString method', () => {
+        expect(repeatString('Hi',2)).toBe('HiHi');
     })
 })  
