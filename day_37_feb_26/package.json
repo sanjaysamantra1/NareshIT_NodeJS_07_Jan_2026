@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "test": "mocha test/**/*.js",
+    "test-report": "nyc mocha test/**/*.js",
+    "coverage": "nyc report --reporter=html && npm run test"
   },
   "keywords": [],
   "author": "",
