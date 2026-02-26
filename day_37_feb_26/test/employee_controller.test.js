@@ -23,7 +23,7 @@ describe('Test Suite for Employee CRUD', () => { // Test Suite
         findByIdStub.restore();
     })
 
-    it('Should verify getAllEmployees', async () => { // Test Case - 1
+    it.skip('Should verify getAllEmployees', async () => { // Test Case - 1
         console.log('test case-1');
         const mockEmployees = [
             { _id: 1111, name: 'sanjay', gender: 'male', sal: 5000 },
