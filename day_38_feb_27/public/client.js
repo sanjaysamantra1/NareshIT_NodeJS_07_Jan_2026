@@ -79,7 +79,7 @@ messageForm.addEventListener("submit", (e) => {
 
 // Fetch data from DB
 let oldMessages = [
-    { user: 'sainath', message: 'Helloooo' }    
+    { user: 'Nayan', message: 'Helloooo' }    
 ]
 for (ele of oldMessages) {
     addNewMessage({ user: ele.user, message: ele.message })

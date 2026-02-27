@@ -14,7 +14,7 @@ io.on('connection', (socket) => {
     socket.on('new user', function (data) {
         socket.userId = data;
         activeUsers.add(data);
-        io.emit('new user', [...activeUsers])
+        io.emit('new user', [...activeUsers]); //server is triggering an event
     })
     socket.on('disconnected', function () {
         activeUsers.delete(socket.userId);
@@ -24,7 +24,8 @@ io.on('connection', (socket) => {
         io.emit('chat message', data)
     })
     socket.on('typing', function (data) {
-        io.emit('typing', data)
+        // io.emit('typing', data)
+        socket.broadcast.emit('typing', data)
     })
 });
 
