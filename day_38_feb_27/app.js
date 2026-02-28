@@ -6,33 +6,37 @@ const io = require('socket.io')(server);
 // static file
 app.use(express.static('public'))
 
-const activeUsers = new Set();
+const activeUsers = new Map(); // {userId:socketId}
 
 io.on('connection', (socket) => {
     console.log('Made Socket Connection...');
 
 
     socket.on('private_message', function ({ message, toUserId }) {
-        const activeUsersArr = [...activeUsers];
-        console.log(toUserId, activeUsersArr)
-        console.log(activeUsersArr.includes(toUserId))
-        if (activeUsersArr.includes(toUserId)) {
-            const targetSocketId = activeUsersArr.find(user => user == toUserId);
-            console.log('targetSocketId', targetSocketId)
-            io.to('nayan_ramanathan_room').emit('receive_private_message', message);
+        const targetSocketId = activeUsers.get(toUserId);
+        // if (activeUsersArr.includes(toUserId)) {
+        //     const targetSocketId = activeUsersArr.find(user => user == toUserId);
+        //     console.log('targetSocketId', targetSocketId)
+        //     io.to('nayan_ramanathan_room').emit('receive_private_message', message);
+        // }
+        if(targetSocketId){
+            io.to(targetSocketId).emit('receive_private_message',{
+                from:socket.userId,
+                message
+            })
         }
     })
 
-    socket.on('new user', function (data) {
-        socket.userId = data;
-        activeUsers.add(data);
-        io.emit('new user', [...activeUsers]); //server is triggering an event
+    socket.on('new user', function (userId) {
+        socket.userId = userId;
+        activeUsers.set(userId, socket.id);
+        io.emit('new user', [...activeUsers.keys()]); //server is triggering an event
         console.log(activeUsers)
         if (socket.userId == 'nayan' || socket.userId == 'ramanathan') {
             socket.join('nayan_ramanathan_room')
         }
     })
-    socket.on('disconnected', function () {
+    socket.on('disconnect', function () {
         activeUsers.delete(socket.userId);
         io.emit('user disconnected', socket.userId)
     })

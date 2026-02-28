@@ -124,7 +124,7 @@ socket.on("receive_private_message", function (msg) {
 
 document.querySelector('.private_message_button').addEventListener('click', () => {
     socket.emit("private_message", {
-        toUserId: 'ramanathan',
-        message: 'Private message from Nayan To Ramanathan'
+        toUserId: 'sanjay',
+        message: 'Private message from Nayan To Sanjay'
     });
 })
