@@ -79,7 +79,7 @@ messageForm.addEventListener("submit", (e) => {
 
 // Fetch data from DB
 let oldMessages = [
-    { user: 'Nayan', message: 'Helloooo' }    
+    { user: 'Nayan', message: 'Helloooo' }
 ]
 for (ele of oldMessages) {
     addNewMessage({ user: ele.user, message: ele.message })
@@ -115,3 +115,16 @@ socket.on("typing", function (data) {
 
     fallback.innerHTML = `<p>${nick} is typing...</p>`;
 });
+
+
+// private message
+socket.on("receive_private_message", function (msg) {
+    console.log('priavte message ', msg)
+});
+
+document.querySelector('.private_message_button').addEventListener('click', () => {
+    socket.emit("private_message", {
+        toUserId: 'ramanathan',
+        message: 'Private message from Nayan To Ramanathan'
+    });
+})
