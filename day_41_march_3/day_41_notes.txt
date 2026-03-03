@@ -1,0 +1,17 @@
+JWT
+===
+1.client provides credentials to the authentication Server.
+2.AccessToken and RefreshToken are then issued by the authentication Server.
+3.After that, client uses the access token to request resource endpoints for a protected resource.
+4.The resource endpoint verifies the access token before delivering a secure resource.
+5.Repeat steps 3 and 4 until the access token is no longer valid.
+6.When the access token expires,client requests a new AccesToken using RefreshToken.
+7.A new access token and refresh token are issued by the authentication Server.
+8.Repeat steps 3 through 7 until the refresh token has expired.
+9.When the refresh token expires,client must re-authenticate with the authentication server,flow begins from step-1
+
+
+Project
+========
+1. npm init -y
+2. npm i express cors mongoose bcrypt jsonwebtoken
