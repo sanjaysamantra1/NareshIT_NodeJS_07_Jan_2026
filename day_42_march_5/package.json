@@ -1,0 +1,22 @@
+{
+  "name": "day_42_march_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --env-file=.development.env app.js",
+    "qa": "node --env-file=.qa.env app.js",
+    "prod": "node --env-file=.prod.env app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.4"
+  }
+}
