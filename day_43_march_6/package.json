@@ -13,5 +13,10 @@
   "dependencies": {
     "node-cron": "^4.2.1",
     "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "globals": "^17.4.0"
   }
 }

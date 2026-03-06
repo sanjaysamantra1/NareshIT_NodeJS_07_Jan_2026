@@ -2,6 +2,7 @@ const nodemailer = require("nodemailer");
 const express = require('express');
 const cron = require('node-cron');
 const app = express();
+var a = 10;
 
 async function sendMyMail() {
     const transporter = nodemailer.createTransport({
@@ -34,7 +35,7 @@ async function sendMyMail() {
     });
     console.log("Message Sent Successfully!!!");
 }
-app.get('/sendMail', async (req, res) => {
+app.get("/sendMail", async (req, res) => {
     try {
         await sendMyMail();
         res.send("Message Sent Successfully!!!");
