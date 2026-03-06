@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const express = require('express');
+const cron = require('node-cron');
 const app = express();
 
 async function sendMyMail() {
@@ -40,6 +41,16 @@ app.get('/sendMail', async (req, res) => {
     } catch (err) {
         res.send(err)
     }
+});
+app.get('/sendMailUsingCron', async (req, res) => {
+    cron.schedule('*/20 * * * * *', async () => {
+        try {
+            await sendMyMail();
+        } catch (err) {
+            res.send(err)
+        }
+    });
+
 });
 app.listen(5000, () => {
     console.log(`app Running at 5000 port`)
