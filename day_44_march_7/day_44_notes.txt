@@ -1,0 +1,16 @@
+Deploy Nodejs Application
+=========================
+1. Render
+2. Netlify
+3. Heroku
+4. AWS
+
+Render :
+1. Register in Render and login
+   https://dashboard.render.com/register
+2. new ---> web service
+3. Connect to github Repo and Deploy 
+4. a live url should be generated after successful deployment 
+
+https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/
+https://devcenter.heroku.com/articles/deploying-nodejs
