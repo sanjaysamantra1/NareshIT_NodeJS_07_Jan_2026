@@ -1,0 +1,86 @@
+BookMyShow Fully Comprehensive API Endpoints Overview
+1. User Management
+•	POST /users/register → Register new user
+•	POST /users/login → Login / authenticate
+•	POST /users/logout → Logout user
+•	GET /users/profile → Fetch user profile
+•	PUT /users/profile → Update profile
+•	GET /users/bookings → Fetch user’s booking history
+•	POST /users/bookings/cancel → Cancel a booking
+•	POST /users/tickets/transfer → Transfer ticket to another user
+•	POST /users/wallet/add → Add money to wallet
+•	GET /users/wallet → Fetch wallet balance & transactions
+•	GET /users/rewards → Fetch loyalty points & rewards
+•	POST /users/rewards/redeem → Redeem points for discounts/offers
+2. Movie Service
+•	GET /movies → List movies (filters: city, genre, language, format)
+•	GET /movies/{id} → Movie details
+•	GET /movies/{id}/showtimes → Showtimes for a movie
+•	GET /movies/{id}/seats → Available seats
+•	POST /movies/{id}/book → Book selected seats
+•	GET /movies/{id}/reviews → Fetch reviews
+•	POST /movies/{id}/review → Add a review
+3. Event / Play / Sports Service
+•	GET /events → List all events (filters: city, category, date)
+•	GET /events/{id} → Event details
+•	POST /events/book → Book event tickets
+•	GET /events/{id}/seats → Available seats
+•	POST /events/cancel → Cancel event tickets
+•	GET /events/{id}/reviews → Event reviews
+•	POST /events/{id}/review → Add event review
+4. Offers & Promotions
+•	GET /offers → List all offers/discounts
+•	GET /offers/{id} → Offer details
+•	POST /offers/apply → Apply offer on booking
+5. Search & Discovery
+•	GET /search → Search movies, events, venues
+•	GET /recommendations → Personalized suggestions
+•	GET /filters → Fetch all filter options
+6. Payment & Wallet
+•	POST /payments/initiate → Start payment
+•	POST /payments/verify → Verify payment
+•	POST /payments/refund → Process refund
+•	GET /wallet/balance → Wallet balance
+•	POST /wallet/credit → Add money
+•	POST /wallet/debit → Deduct money
+7. Notifications
+•	POST /notifications/send → Send notification
+•	GET /notifications → Fetch user notifications
+•	POST /notifications/subscribe → Subscribe to alerts
+•	POST /notifications/unsubscribe → Unsubscribe from alerts
+8. Admin / Content Management
+•	POST /admin/movies → Add movie
+•	PUT /admin/movies/{id} → Update movie
+•	DELETE /admin/movies/{id} → Remove movie
+•	POST /admin/events → Add event
+•	PUT /admin/events/{id} → Update event
+•	DELETE /admin/events/{id} → Remove event
+•	GET /admin/bookings → Fetch all bookings
+•	POST /admin/offer → Create offer
+•	PUT /admin/offer/{id} → Update offer
+•	DELETE /admin/offer/{id} → Delete offer
+•	GET /admin/reports/sales → Sales report
+•	GET /admin/reports/user-activity → User activity report
+•	GET /admin/reports/popular-shows → Popular shows report
+9. Seat Management & Pricing
+•	GET /shows/{showId}/seats → Fetch seat map with availability & type
+•	GET /shows/{showId}/pricing → Seat-wise pricing
+•	POST /shows/{showId}/hold → Temporarily hold seats
+•	POST /shows/{showId}/release → Release held seats
+10. Cancellations & Refunds
+•	POST /bookings/{id}/cancel → Cancel booking
+•	GET /bookings/{id}/refund-status → Refund status
+•	POST /bookings/{id}/reschedule → Reschedule booking
+11. Location & City Management
+•	GET /cities → List supported cities
+•	GET /cities/{id}/venues → Fetch venues in a city
+•	GET /cities/{id}/movies → Movies in a city
+•	GET /cities/{id}/events → Events in a city
+12. Miscellaneous / System Utilities
+•	GET /venues → List theaters/venues
+•	GET /venues/{id} → Venue details
+•	GET /languages → List supported languages
+•	GET /categories → List categories
+•	GET /health-check → API health status
+•	GET /version → API version info
+•	GET /config → System configuration
