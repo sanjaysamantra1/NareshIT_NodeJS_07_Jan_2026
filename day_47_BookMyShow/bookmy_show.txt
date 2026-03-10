@@ -1,0 +1,13 @@
+FrontEnd:
+=========
+1. Clone the project from below URL
+   https://github.com/sanjaysamantra1/bookmyshow_angular
+
+2. npm install
+
+3. ng serve
+
+
+
+BackEnd
+=======
