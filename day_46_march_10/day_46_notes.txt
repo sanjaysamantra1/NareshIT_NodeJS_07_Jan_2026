@@ -1,0 +1,5 @@
+Upload File
+===========
+1. express-fileupload : Simple express middleware for uploading files from client to server
+2. formidable : Simple express middleware for uploading files.
+3. multer : used for uploading files
