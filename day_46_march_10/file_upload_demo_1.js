@@ -13,7 +13,7 @@ app.post('/upload', (req, res) => {
         res.status(400).send('No Files were uploaded.')
     }
     let sampleFile = req.files.sampleFile;
-    uploadPath = __dirname + '/assets/' + sampleFile.name;
+    let uploadPath = `${__dirname}/assets/${sampleFile.name}`;
 
     sampleFile.mv(uploadPath, function (err) {
         if (err)
